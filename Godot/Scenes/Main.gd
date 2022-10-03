@@ -133,7 +133,7 @@ func update_lobby(data):
     var plabels = $Menu/MenuFader/Lobby/Lobby.get_children()
     $Menu/MenuFader/Lobby/HSeparator/LobbyPlayers.text = "Players: " + str(len(lobby)) + "/8"
     if len(lobby) >= 2:
-        $Menu/MenuFader/Lobby/LobbyTime/Timer.stop(t)
+        $Menu/MenuFader/Lobby/LobbyTime/Timer.stop()
         $Menu/MenuFader/Lobby/LobbyTime/Timer.start(t)
                 
     for plabel in plabels:
