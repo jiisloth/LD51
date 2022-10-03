@@ -12,12 +12,12 @@ func _ready():
 
 func connect_player(id, data):
     lobby.append({"id": id, "name": data["name"], "ready": false})
-    send_lobby_state()
     if len(lobby) == 2:
         $Timer.stop()
         $Timer.start(180)
     if len(lobby) == 8:
         start_game()
+    send_lobby_state()
 
 func set_ready(id, data):
     var all_ready = true

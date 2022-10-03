@@ -25,7 +25,7 @@ func connect_to_server():
 
 func disconnect_from_server():
     get_tree().get_root().get_node("Main").disconnected(true)
-    _client.disconnect_from_host(1001, "")
+    _client.disconnect_from_host(1000, "")
     set_process(false)
 
 func _closed(was_clean = false):
