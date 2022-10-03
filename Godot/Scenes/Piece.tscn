@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://sprites/pieces.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Piece.gd" type="Script" id=2]
+[ext_resource path="res://misc/twotoedsloth.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://misc/fattwotoedsloth.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://sprites/piece_highlight.png" type="Texture" id=5]
+[ext_resource path="res://sounds/land.mp3" type="AudioStream" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[node name="Piece" type="Node2D" groups=["Piece"]]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -41 )
+texture = ExtResource( 1 )
+hframes = 6
+vframes = 9
+
+[node name="PieceHighlight" type="Sprite" parent="Sprite"]
+modulate = Color( 1, 1, 1, 0.682353 )
+show_behind_parent = true
+texture = ExtResource( 5 )
+hframes = 6
+vframes = 2
+
+[node name="Info" type="Control" parent="Sprite"]
+anchor_left = 0.5
+anchor_top = -0.012
+anchor_right = 0.5
+anchor_bottom = -0.012
+margin_left = -98.0
+margin_top = -21.484
+margin_right = 82.0
+margin_bottom = -2.484
+mouse_filter = 2
+
+[node name="Name" type="Label" parent="Sprite/Info"]
+visible = false
+anchor_right = 1.0
+margin_top = 2.0
+margin_bottom = 16.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "name"
+align = 1
+
+[node name="Name" type="Label" parent="Sprite/Info/Name"]
+anchor_right = 1.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 2 )
+text = "name"
+align = 1
+
+[node name="Bar" type="ColorRect" parent="Sprite/Info"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -9.0
+margin_top = -4.0
+margin_right = 9.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.388235 )
+
+[node name="BarEmpty" type="ColorRect" parent="Sprite/Info/Bar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+mouse_filter = 2
+color = Color( 0.458824, 0.458824, 0.458824, 1 )
+
+[node name="BarFull" type="ColorRect" parent="Sprite/Info/Bar/BarEmpty"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Movable" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Death" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[node name="Clicky" type="Area2D" parent="."]
+position = Vector2( 0, -22 )
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Clicky"]
+polygon = PoolVector2Array( 5, -15, 7, 2, -7, 2, -5, -15 )
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0, -29 )
+volume_db = -30.0
+pitch_scale = 0.7
+bus = "Death"
+
+[node name="Land" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0, -29 )
+stream = ExtResource( 6 )
+volume_db = -20.0
+bus = "sfx"
+
+[node name="Clicked" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = "sfx"
+
+[connection signal="timeout" from="Movable" to="." method="_on_Movable_timeout"]
+[connection signal="timeout" from="Death" to="." method="_on_Death_timeout"]
+[connection signal="input_event" from="Clicky" to="." method="_on_Clicky_input_event"]

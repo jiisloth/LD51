@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/queen.mp3-bfd8b5fa89e3b43e5ba5e6d0244bb1e6.mp3str"
+
+[deps]
+
+source_file="res://sounds/queen.mp3"
+dest_files=[ "res://.import/queen.mp3-bfd8b5fa89e3b43e5ba5e6d0244bb1e6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

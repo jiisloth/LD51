@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bishop.mp3-39cc13eb2ff8cd030fd32ab6e86d3ef7.mp3str"
+
+[deps]
+
+source_file="res://sounds/bishop.mp3"
+dest_files=[ "res://.import/bishop.mp3-39cc13eb2ff8cd030fd32ab6e86d3ef7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

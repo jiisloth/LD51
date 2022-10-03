@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/king.mp3-b51731c871fd7e0189e89ddf6a6ec0a3.mp3str"
+
+[deps]
+
+source_file="res://sounds/king.mp3"
+dest_files=[ "res://.import/king.mp3-b51731c871fd7e0189e89ddf6a6ec0a3.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

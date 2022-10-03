@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/rook.mp3-2d84678091f30ffeffe9e4dd51c7363f.mp3str"
+
+[deps]
+
+source_file="res://sounds/rook.mp3"
+dest_files=[ "res://.import/rook.mp3-2d84678091f30ffeffe9e4dd51c7363f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

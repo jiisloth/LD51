@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/knight.mp3-26712b80ae97e6853261d1753f4d0ffb.mp3str"
+
+[deps]
+
+source_file="res://sounds/knight.mp3"
+dest_files=[ "res://.import/knight.mp3-26712b80ae97e6853261d1753f4d0ffb.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

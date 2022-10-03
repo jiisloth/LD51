@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Board.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Tile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Piece.tscn" type="PackedScene" id=3]
+
+[node name="Board" type="Node2D"]
+script = ExtResource( 1 )
+Tile = ExtResource( 2 )
+Piece = ExtResource( 3 )
+
+[node name="Tiles" type="YSort" parent="."]
+
+[node name="Board_ready" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Board_ready" to="." method="_on_Board_ready_timeout"]

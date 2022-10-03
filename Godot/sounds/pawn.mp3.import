@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pawn.mp3-7aa9f04ee112388150f072ebde692d9e.mp3str"
+
+[deps]
+
+source_file="res://sounds/pawn.mp3"
+dest_files=[ "res://.import/pawn.mp3-7aa9f04ee112388150f072ebde692d9e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
