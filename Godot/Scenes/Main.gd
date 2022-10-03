@@ -17,6 +17,7 @@ func init_board(data):
     lobby = []
 
 func _ready():
+    print("v0.1.9")
     fade_in = $Menu/MenuFader/Main
 
 

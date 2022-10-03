@@ -7,6 +7,8 @@ var websocket_url = "wss://chess.hellokopter.com"
 # Our WebSocketClient instance
 var _client = WebSocketClient.new()
 
+var connect = false
+
 func _ready():
     # Connect base signals to get notified of connection open, close, and errors.
     _client.connect("connection_closed", self, "_closed")
@@ -20,18 +22,21 @@ func _ready():
 func connect_to_server():
     set_process(true)
     var err = _client.connect_to_url(websocket_url, PoolStringArray(["ludus"]))
+    connect = true
     if err != OK:
         set_process(false)
 
 func disconnect_from_server():
     get_tree().get_root().get_node("Main").disconnected(true)
+    connect = false
     _client.disconnect_from_host(1000, "")
     set_process(false)
 
 func _closed(was_clean = false):
     # was_clean will tell you if the disconnection was correctly notified
     # by the remote peer before closing the socket.
-    get_tree().get_root().get_node("Main").disconnected(false)
+    if connect:
+        get_tree().get_root().get_node("Main").disconnected(false)
     set_process(false)
 
 func _connected(proto = ""):
