@@ -41,7 +41,6 @@ margin_bottom = -2.484
 mouse_filter = 2
 
 [node name="Name" type="Label" parent="Sprite/Info"]
-visible = false
 anchor_right = 1.0
 margin_top = 2.0
 margin_bottom = 16.0
