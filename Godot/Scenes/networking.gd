@@ -1,8 +1,8 @@
 extends Node
 
 # The URL we will connect to
-#var websocket_url = "wss://chess.hellokopter.com"
-var websocket_url = "ws://localhost:60129"
+var websocket_url = "wss://chess.hellokopter.com"
+#var websocket_url = "ws://localhost:60129"
 
 # Our WebSocketClient instance
 var _client = WebSocketClient.new()
